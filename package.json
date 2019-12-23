@@ -1,0 +1,28 @@
+{
+  "name": "omniunpacker",
+  "version": "1.0.0",
+  "description": "unpacker any file with one command",
+  "main": "src/main.js",
+  "bin": {
+    "omniUnpacker": "bin/omniUnpacker"
+  },
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jzes/omniUnpacker.git"
+  },
+  "keywords": [
+    "unpacker"
+  ],
+  "author": "jzes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jzes/omniUnpacker/issues"
+  },
+  "homepage": "https://github.com/jzes/omniUnpacker#readme",
+  "dependencies": {
+    "@types/node": "^13.1.0"
+  }
+}
