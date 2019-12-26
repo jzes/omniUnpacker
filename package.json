@@ -7,7 +7,8 @@
     "omniUnpacker": "bin/omniUnpacker"
   },
   "scripts": {
-
+    "build": "tsc",
+    "start": "./bin/omniUnpacker /home/jzes/documents"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
   },
   "homepage": "https://github.com/jzes/omniUnpacker#readme",
   "dependencies": {
-    "@types/node": "^13.1.0"
+    "@types/minimist": "^1.2.0",
+    "@types/node": "^13.1.0",
+    "minimist": "^1.2.0"
   }
 }

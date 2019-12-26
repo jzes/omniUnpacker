@@ -1,3 +1,6 @@
+import {InputService} from "./inputService";
+
 export const main = () => {
-    console.log('hello');
+    const inputService = new InputService();
+    inputService.getInput(process.argv.slice(2));
 };
