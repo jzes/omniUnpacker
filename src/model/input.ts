@@ -1,4 +1,4 @@
 export class Input{
-    inputPath: string;
+    filePath: string;
     outputPath: string;
 }

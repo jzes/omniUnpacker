@@ -1,6 +1,8 @@
-import {InputService} from "./inputService";
+import {InputService} from "./service/inputService";
 
 export const main = () => {
     const inputService = new InputService();
-    inputService.getInput(process.argv.slice(2));
+    const input = inputService.getInput(process.argv.slice(2));
+
+
 };
