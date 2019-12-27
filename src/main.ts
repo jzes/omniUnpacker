@@ -1,5 +1,5 @@
 import {InputService} from "./service/inputService";
-import {Unpacker} from "./service/unpacker";
+import {Unpacker} from "./unpacker/unpacker";
 import * as path from "path";
 
 
@@ -13,10 +13,11 @@ export const main = () => {
 };
 
 const buildCallString = (filePath: string) => {
-    const extension = path.extname(filePath);
-    const className = `${extension[1].toUpperCase()}${extension.slice(2)}Unpacker`;
-    const packageName = `${extension.slice(1)}Unpacker`;
-    const importString = `const ${className} = require("./service/${packageName}").${className};`;
-    const createString = `unpacker = new ${extension[1].toUpperCase()}${extension.slice(2)}Unpacker(input);`;
+    const extension = path.extname(filePath).replace('.', '');
+    console.log(extension);
+    const className = `${extension[0].toUpperCase()}${extension.slice(1)}Unpacker`;
+    const packageName = `${extension}Unpacker`;
+    const importString = `const ${className} = require("./unpacker/${packageName}").${className};`;
+    const createString = `unpacker = new ${className}(input);`;
     return `${importString}\n${createString}`;
-}
+};

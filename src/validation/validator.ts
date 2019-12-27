@@ -4,19 +4,24 @@ import * as fs from 'fs';
 export class Validator{
     public static isParametersValid(input: Input) {
         if (!input.filePath) {
-            throw new Error('filePath parameter not found');
+            console.error('filePath parameter not found');
+            process.exit(0);
         }
     }
 
     public static async fileExists(filePath: string){
         try {
-            await fs.accessSync(filePath);
+            const result = await fs.accessSync(filePath);
         }catch (error) {
-            throw new Error(`O arquivo em ${filePath} não existe`);
+            console.error(`O arquivo ${filePath} não existe`);
+            process.exit(0);
         }
     }
 
     public static async isFile(filePath: string) {
-        if (!fs.lstatSync(filePath).isFile()) throw new Error('O item indicado para descompactação não é um arquivo');
+        if (!fs.lstatSync(filePath).isFile()){
+            console.error('O item indicado para descompactação não é um arquivo');
+            process.exit(0);
+        }
     }
 }

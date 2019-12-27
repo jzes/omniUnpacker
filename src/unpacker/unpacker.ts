@@ -1,5 +1,6 @@
 import {Input} from "../model/input";
 import {Validator} from "../validation/validator";
+import * as shelljs from "shelljs";
 
 export abstract class Unpacker{
     constructor(protected input: Input){
@@ -7,5 +8,9 @@ export abstract class Unpacker{
         Validator.isFile(this.input.filePath);
     }
 
-    public abstract unpack();
+    unpack() {
+        shelljs.exec(this.buildCommandString());
+    }
+
+    protected abstract buildCommandString();
 }

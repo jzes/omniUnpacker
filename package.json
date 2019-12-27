@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "./bin/omniUnpacker /home/jzes/Documentos/teste.zip"
+    "start": "./bin/omniUnpacker /home/jzes/teste.tar.gz"
   },
   "repository": {
     "type": "git",
