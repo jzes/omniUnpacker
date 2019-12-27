@@ -4,10 +4,7 @@ import * as shelljs from 'shelljs';
 
 export class ZipUnpacker extends Unpacker{
     unpack() {
-        Validator.fileExists(this.input.filePath);
-        Validator.isFile(this.input.filePath);
-        const result = shelljs.exec(this.buildCommandString());
-        console.log(result);
+        shelljs.exec(this.buildCommandString());
     }
     private buildCommandString(): string{
         let command = `unzip ${this.input.filePath}`;

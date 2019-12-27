@@ -1,12 +1,17 @@
 import {Input} from "../model/input";
 import minimist = require("minimist");
 import {Validator} from "../validation/validator";
+import * as path from "path";
 
 export class InputService{
 
     public getInput(args: string[]): Input {
         const rawInput = minimist(args);
-        const input = {filePath: rawInput._[0], outputPath: rawInput._[0].slice(rawInput._.length-1) };
+
+        const input = {
+            filePath: rawInput._[0],
+            outputPath: '.',
+        };
         if (rawInput.out){
             input.outputPath = rawInput.out;
         }
