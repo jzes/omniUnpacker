@@ -10,11 +10,12 @@ export const main = () => {
     let unpacker: Unpacker;
     eval(callString);
     unpacker.unpack();
+    console.log('unpack successful');
+    process.exit(0);
 };
 
 const buildCallString = (filePath: string) => {
     const extension = path.extname(filePath).replace('.', '');
-    console.log(extension);
     const className = `${extension[0].toUpperCase()}${extension.slice(1)}Unpacker`;
     const packageName = `${extension}Unpacker`;
     const importString = `const ${className} = require("./unpacker/${packageName}").${className};`;
