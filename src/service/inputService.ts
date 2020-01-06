@@ -1,13 +1,12 @@
-import {Input} from "../model/input";
+import { Input } from "../model/input";
+import { Validator } from "../validation/validator";
 import minimist = require("minimist");
-import {Validator} from "../validation/validator";
-import * as path from "path";
 
 export class InputService{
 
     public getInput(args: string[]): Input {
         const rawInput = minimist(args);
-
+        const teste = "teste";
         const input = {
             filePath: rawInput._[0],
             outputPath: '.',
@@ -18,5 +17,4 @@ export class InputService{
         Validator.isParametersValid(input);
         return input;
     }
-
 }

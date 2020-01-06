@@ -1,4 +1,4 @@
-import {Unpacker} from "./unpacker";
+import { Unpacker } from "./unpacker";
 
 export class Bz2Unpacker extends Unpacker{
     protected buildCommandString(): string {

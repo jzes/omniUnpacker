@@ -1,4 +1,4 @@
-import {Unpacker} from "./unpacker";
+import { Unpacker } from "./unpacker";
 
 export class GzUnpacker extends Unpacker{
     protected buildCommandString() {

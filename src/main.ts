@@ -1,6 +1,6 @@
-import {InputService} from "./service/inputService";
-import {Unpacker} from "./unpacker/unpacker";
 import * as path from "path";
+import { InputService } from "./service/inputService";
+import { Unpacker } from "./unpacker/unpacker";
 
 
 export const main = () => {
